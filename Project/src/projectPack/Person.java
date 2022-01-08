@@ -1,6 +1,7 @@
 package projectPack;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Person {
     static int personCounter = 0;
@@ -13,7 +14,39 @@ public class Person {
 
     ArrayList<Person> persons = new ArrayList<Person>();
 
+    Scanner scanner = new Scanner(System.in);
 
+    public Person(){
+        name = "bos";
+        surname = "bos";
+        birthday = "bos";
+        gender = null;
+    }
+
+    public void personAdder(){
+        //TODO agacta ekleme yapilacak kisi bulunamamakta kontrolu (ilk kisi icin)
+        System.out.println("Kisi bilgilerini giriniz");
+        Relation tempRelation = new Relation();
+        System.out.println("Ad: ");
+        String tempName = scanner.nextLine();
+        System.out.println("Soyad: ");
+        String tempSurname = scanner.nextLine();
+        System.out.println("Doğum tarihi: ");
+        String tempBirthday = scanner.nextLine();
+        System.out.println("Cinsiyet(E/K): ");
+        String inputForGender = scanner.nextLine();
+        Boolean tempGender;
+        if (inputForGender.equals("E")||inputForGender.equals("e")){
+            tempGender = true;
+        }
+        else if (inputForGender.equals("K")||inputForGender.equals("k")){
+            tempGender = false;
+        }else {
+            tempGender = null;
+        }
+
+        persons.add(new Person(tempRelation,tempName,tempSurname,tempBirthday,tempGender));
+    }
 
     public Person(projectPack.Relation parents, String name, String surname, String birthday, Boolean gender){
         this.parents = parents;
