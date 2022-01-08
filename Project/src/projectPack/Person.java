@@ -48,6 +48,22 @@ public class Person {
         persons.add(new Person(tempRelation,tempName,tempSurname,tempBirthday,tempGender));
     }
 
+    public void showPersons(Person person){
+        for (int i=0; i<person.persons.size();i++){
+            person.viewPersonInfo();
+        }
+    }
+
+    public void viewPersonInfo(){
+        System.out.println("Adı: "+name);
+        System.out.println("Soyadı: "+surname);
+        System.out.println("Doğum Tarihi: "+birthday);
+        System.out.println("Cinsiyeti: "+gender);
+        //tum relationlari gosterecek fonk. gelicek
+        System.out.println();
+
+    }
+
     public Person(projectPack.Relation parents, String name, String surname, String birthday, Boolean gender){
         this.parents = parents;
         this.name = name;
