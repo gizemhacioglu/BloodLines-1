@@ -11,6 +11,14 @@ public class Relation {
     ArrayList<Relation> relations = new ArrayList<Relation>();
     ArrayList<Person> children = new ArrayList<Person>();
 
+    public Relation(){
+
+    }
+
+    public void relationAdder(Person person1, Person person2){
+        relations.add(new Relation(person1,person2));
+    }
+
 
     public Relation(Person spouse1, Person spouse2) {
         this.spouse1 = spouse1;

@@ -13,6 +13,8 @@ public class Person {
 
     ArrayList<Person> persons = new ArrayList<Person>();
 
+
+
     public Person(projectPack.Relation parents, String name, String surname, String birthday, Boolean gender){
         this.parents = parents;
         this.name = name;
