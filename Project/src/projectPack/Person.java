@@ -48,6 +48,11 @@ public class Person {
         persons.add(new Person(tempRelation,tempName,tempSurname,tempBirthday,tempGender));
     }
 
+    public void childrenAdder(Relation relation, int relationID, int personID){
+        relation.relations.get(relationID).children.add(persons.get(personID));
+        persons.get(personID).parents = relation.relations.get(relationID);
+    }
+
     public void showPersons(Person person){
         for (int i=0; i<person.persons.size();i++){
             person.viewPersonInfo();
