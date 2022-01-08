@@ -13,8 +13,6 @@ public class Main {
         person.personAdder();//cocuk yaratildi
         person.childrenAdder(relation,0,2);//cocuk relationa eklendi
 
-        person.persons.get(2).viewPersonInfo();
-        /*
         person.personAdder();//dede yaratildi
         person.personAdder();//babaanne yaratildi
         relation.relationAdder(person.persons.get(3),person.persons.get(4));
@@ -24,8 +22,9 @@ public class Main {
         person.personAdder();//anneanne yaratildi
         relation.relationAdder(person.persons.get(5),person.persons.get(6));
         person.childrenAdder(relation,2,1);
+
         person.persons.get(2).viewPersonInfo();//cocuk icin bilgileri bastirir
-        */
+
 
     }
 }

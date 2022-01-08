@@ -53,6 +53,23 @@ public class Person {
         persons.get(personID).parents = relation.relations.get(relationID);
     }
 
+    public void allRelations(){//TODO B U R A D A N   D E V A M
+        //burada null olanlari dede= null seklinde bastirmamasi gereken bir islem lazim.
+//        if (parents.relations.isEmpty()){
+//            return;
+//        }
+//        if (parents.spouse1==null){
+//            return;
+//        }
+
+        if (parents.spouse1.gender) System.out.println("Baba adı: "+parents.spouse1.name+"\nAnne adı: "+parents.spouse2.name);
+        else System.out.println("Baba adı: "+parents.spouse2.name+"\nAnne adı: "+parents.spouse1.name);
+        if (parents.spouse1.parents.spouse1.gender) System.out.println("Dede adı: "+parents.spouse1.parents.spouse1.name+"\nBabaanne adı: "+parents.spouse1.parents.spouse2.name);
+        else System.out.println("Dede adı: "+parents.spouse1.parents.spouse2.name+"\nBabaanne adı: "+parents.spouse1.parents.spouse1.name);
+        if (parents.spouse2.parents.spouse1.gender) System.out.println("Dede adı: "+parents.spouse2.parents.spouse1.name+"\nAnneanne adı: "+parents.spouse2.parents.spouse2.name);
+        else System.out.println("Dede adı: "+parents.spouse2.parents.spouse2.name+"\nAnneanne adı: "+parents.spouse2.parents.spouse1.name);
+    }
+
     public void showPersons(Person person){
         for (int i=0; i<person.persons.size();i++){
             person.viewPersonInfo();
@@ -64,7 +81,7 @@ public class Person {
         System.out.println("Soyadı: "+surname);
         System.out.println("Doğum Tarihi: "+birthday);
         System.out.println("Cinsiyeti: "+gender);
-        //tum relationlari gosterecek fonk. gelicek
+        allRelations();
         System.out.println();
 
     }
