@@ -3,8 +3,10 @@ package GUI;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class UI {
+public class UI implements ActionListener {
     JFrame frame;
     JPanel firstPanel;
     JPanel secondPanel;
@@ -64,6 +66,10 @@ public class UI {
         textFieldDogumTarihi = new JTextField();
         textFieldDogumTarihi.setMaximumSize(new Dimension(Integer.MAX_VALUE, textFieldDogumTarihi.getMinimumSize().height));
 
+        comboBoxCinsiyet = new JComboBox(cinsiyet);
+        comboBoxCinsiyet.setMaximumSize(new Dimension(Integer.MAX_VALUE, textFieldDogumTarihi.getMinimumSize().height));
+        comboBoxCinsiyet.addActionListener(this);
+
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
@@ -77,6 +83,11 @@ public class UI {
 
     public static void main(String[] args) {
         UI ui = new UI();
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
     }
 }
