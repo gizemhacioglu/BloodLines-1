@@ -70,6 +70,10 @@ public class UI implements ActionListener {
         comboBoxCinsiyet.setMaximumSize(new Dimension(Integer.MAX_VALUE, textFieldDogumTarihi.getMinimumSize().height));
         comboBoxCinsiyet.addActionListener(this);
 
+        buttonEkle = new JButton("Ekle");
+        buttonEkle.setBounds(secondPanel.getX() + 50,secondPanel.getY() + 50,30,10);
+        buttonEkle.addActionListener(this);
+
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
