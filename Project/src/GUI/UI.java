@@ -55,6 +55,15 @@ public class UI {
         labelCinsiyet = new JLabel();
         labelCinsiyet.setText("Cinsiyet: ");
 
+        textFieldAd = new JTextField();
+        textFieldAd.setMaximumSize(new Dimension(Integer.MAX_VALUE, textFieldAd.getMinimumSize().height));
+
+        textFieldSoyad = new JTextField();
+        textFieldSoyad.setMaximumSize(new Dimension(Integer.MAX_VALUE, textFieldSoyad.getMinimumSize().height));
+
+        textFieldDogumTarihi = new JTextField();
+        textFieldDogumTarihi.setMaximumSize(new Dimension(Integer.MAX_VALUE, textFieldDogumTarihi.getMinimumSize().height));
+
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
