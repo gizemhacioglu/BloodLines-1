@@ -9,6 +9,22 @@ public class UI {
     JPanel firstPanel;
     JPanel secondPanel;
     JPanel thirdPanel;
+    JButton buttonEkle;
+    JButton buttonTemizle;
+    JButton buttonOlustur;
+    JLabel labelAd;
+    JLabel labelSoyAd;
+    JLabel labelDogumTarihi;
+    JLabel labelCinsiyet;
+    JLabel labelAkraba;
+    JTextField textFieldAd;
+    JTextField textFieldSoyad;
+    JTextField textFieldDogumTarihi;
+    JComboBox comboBoxCinsiyet;
+    String[] cinsiyet = {"Kadın","Erkek"};
+    JComboBox comboBoxAkraba;
+    String[] akraba = {"Anne","Baba","Kardeş","Amca","Teyze","Dayı","Hala","Eş"};
+
     Border border = BorderFactory.createLineBorder(Color.black);
 
     UI(){
@@ -26,6 +42,18 @@ public class UI {
         thirdPanel.setBorder(border);
         thirdPanel.setBounds(1100, 400, 430, 400);
         thirdPanel.setLayout(null);
+
+        labelAd = new JLabel();
+        labelAd.setText("Ad: ");
+
+        labelSoyAd = new JLabel();
+        labelSoyAd.setText("Soyad: ");
+
+        labelDogumTarihi = new JLabel();
+        labelDogumTarihi.setText("Doğum Tarihi: ");
+
+        labelCinsiyet = new JLabel();
+        labelCinsiyet.setText("Cinsiyet: ");
 
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
