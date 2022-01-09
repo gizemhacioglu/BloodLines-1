@@ -51,19 +51,35 @@ public class Person {
     public void childrenAdder(Relation relation, int relationID, int personID){
         relation.relations.get(relationID).children.add(persons.get(personID));
         persons.get(personID).parents = relation.relations.get(relationID);
+
+    }
+    public void motherFather(){
+        try {
+
+        if (parents.spouse1.gender){
+            parents.father.add(parents.spouse1);
+            parents.mother.add(parents.spouse2);
+            System.out.println("Baba adı: " + parents.spouse1.name + "\nAnne adı: " + parents.spouse2.name);
+        }else if (parents.spouse2.gender){
+            parents.father.add(parents.spouse2);
+            parents.mother.add(parents.spouse1);
+            System.out.println("Baba adı: " + parents.spouse2.name + "\nAnne adı: " + parents.spouse1.name);
+        }
+        }catch (NullPointerException e){
+            e.getMessage();
+        }
     }
 
-    public void allRelations(){//TODO B U R A D A N   D E V A M
-        //burada null olanlari dede= null seklinde bastirmamasi gereken bir islem lazim.
-//        if (parents.relations.isEmpty()){
-//            return;
-//        }
-//        if (parents.spouse1==null){
-//            return;
-//        }
+    public void kayinPederValide(Relation relation, int relationID, int personID){
 
-        if (parents.spouse1.gender) System.out.println("Baba adı: "+parents.spouse1.name+"\nAnne adı: "+parents.spouse2.name);
-        else System.out.println("Baba adı: "+parents.spouse2.name+"\nAnne adı: "+parents.spouse1.name);
+        if (persons.get(personID).parents.spouse1.gender){
+            System.out.println("Kayınpeder: "+persons.get(personID).parents.spouse1.name);
+        }
+    }
+
+
+
+    public void grandParents(){
         if (parents.spouse1.parents.spouse1.gender) System.out.println("Dede adı: "+parents.spouse1.parents.spouse1.name+"\nBabaanne adı: "+parents.spouse1.parents.spouse2.name);
         else System.out.println("Dede adı: "+parents.spouse1.parents.spouse2.name+"\nBabaanne adı: "+parents.spouse1.parents.spouse1.name);
         if (parents.spouse2.parents.spouse1.gender) System.out.println("Dede adı: "+parents.spouse2.parents.spouse1.name+"\nAnneanne adı: "+parents.spouse2.parents.spouse2.name);
@@ -81,7 +97,8 @@ public class Person {
         System.out.println("Soyadı: "+surname);
         System.out.println("Doğum Tarihi: "+birthday);
         System.out.println("Cinsiyeti: "+gender);
-        allRelations();
+        motherFather();
+        grandParents();
         System.out.println();
 
     }
@@ -136,6 +153,6 @@ public class Person {
     public void setGender(Boolean gender) {
         this.gender = gender;
     }
-
-
 }
+
+
